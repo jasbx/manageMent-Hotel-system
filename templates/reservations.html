@@ -1,0 +1,44 @@
+﻿{% extends "navbar.html" %}
+{% load static %}
+{% block body %}
+<div class="col-md-6">
+    <div class="panel panel-info">
+       <div class="panel-heading">
+         Form Reservations
+       </div>
+       <div class="panel-body">
+           <form  method="POST">
+               {% csrf_token %}
+                       <div class="form-group">
+                           <label>Enter reservations_date</label>
+                           <input class="form-control" type="date" name='reservations_date' />
+                       </div>
+          
+               <div class="form-group">
+                           <label>Enter room_number</label>
+                           <input class="form-control" type="number" name='room_number' />
+                       </div>
+               <div class="form-group">
+                           <label>Enter end_date</label>
+                           <input class="form-control"  type="date" name='end_date' />
+                       </div>
+               <div class="form-group">
+                           <label>Enter squence_number</label>
+                           <input class="form-control"  type="number" name='squence_number' />
+                       </div>
+             
+                       
+                       
+                       
+                       <button type="submit" class="btn btn-success">Send Message </button>
+                       <button type="reset" class="btn btn-primary">Reset Fields</button>
+
+                   </form>
+           </div>
+       </div>
+</div>
+
+</div>
+
+
+{% endblock body %}

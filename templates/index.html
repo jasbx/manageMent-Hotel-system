@@ -1,0 +1,55 @@
+﻿{% extends "navbar.html" %}
+{% load static %}
+{% block body %}
+
+             <div class="row">
+                 
+          
+   
+           <div style="display: flex;
+           justify-content: space-around;
+           align-items: center;">
+                <div class="col-md-6">
+                     <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Empolyess Form
+                        </div>
+                        <div class="panel-body">
+                            <form  method="POST">
+                                {% csrf_token %}
+                                        <div class="form-group">
+                                            <label>Enter Name</label>
+                                            <input class="form-control" type="text" name='name' />
+                                        </div>
+                           
+                                <div class="form-group">
+                                            <label>Enter birthday</label>
+                                            <input class="form-control" type="date" name='birthday' />
+                                        </div>
+                                <div class="form-group">
+                                            <label>Enter salary</label>
+                                            <input class="form-control" step="any" type="number" name='salary' />
+                                        </div>
+                                <div class="form-group">
+                                            <label>Enter age</label>
+                                            <input class="form-control" type="number" name='age' />
+                                        </div>
+                          
+                                        
+                                        
+                                        
+                                        <button type="submit" class="btn btn-success">Send Message </button>
+                                        <button type="reset" class="btn btn-primary">Reset Fields</button>
+
+                                    </form>
+                            </div>
+                        </div>
+                </div>
+           
+  
+          
+    </div>
+    </div>
+    </div>
+   
+{% endblock body %}

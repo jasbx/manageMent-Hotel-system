@@ -1,0 +1,153 @@
+{% load static %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="https://kit.fontawesome.com/a2673a891a.js" crossorigin="anonymous"></script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+ 
+    <title>MANAGEMENT SYSTEM LABRERAY BOOKS</title>
+    <!-- BOOTSTRAP CORE STYLE  -->
+    <link href="{% static "css/bootstrap.css" %}" rel="stylesheet" />
+    <!-- FONT AWESOME STYLE  -->
+    <link href="{% static "css/font-awesome.css" %}" rel="stylesheet" />
+    <!-- CUSTOM STYLE  -->
+    <link href="{% static "css/style.css" %}" rel="stylesheet" />
+    <!-- GOOGLE FONT -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+</head>
+<body>
+    <div class="navbar" style="background-color: rgb(157, 128, 128);" >
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url "home" %}">
+
+                    <img src="{% static "img/hotel.PNG" %}" style="width:100px;height:100px; border-radius: 50%;" />
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- LOGO HEADER END-->
+    <section class="menu-section">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-12">
+                    <div class="navbar-collapse collapse ">
+                      <ul id="menu-top" class="nav navbar-nav navbar-right">
+                            <li><a href="{% url "home" %}" class="menu-top-active">Form Employess</a></li>
+                           
+                            <li><a href="{% url "form" %}">FORMS Customer</a></li>
+                     
+                            <li><a href="{% url "Reservations" %}">Form Reservations</a></li>
+                             <li><a href="{% url "meals" %}">Meals Form</a></li>
+                      
+                        </ul> 
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+     <!-- MENU SECTION END-->
+    <div class="content-wrapper">
+         <div class="container">
+        <div class="row pad-botm">
+            <div class="col-md-12">
+                <h4 class="header-line">Hotel ManageMent SYSTEM</h4>
+                
+                            </div>
+
+        </div>
+             
+             <div class="row">
+            
+                 <div class="col-md-3 col-sm-3 col-xs-6">
+                      <div class="alert alert-info back-widget-set text-center">
+                      
+                        <i class="fa-solid fa-users fa-5x"></i>
+                             <h3>{% if employess %}
+                                Number of Employess: {{ employess |length }}
+                            {% else %}
+                                No athletes.
+                            {% endif %} 
+                            &nbsp; </h3>
+                      
+                        </div>
+                    </div>
+              <div class="col-md-3 col-sm-3 col-xs-6">
+                      <div class="alert alert-success back-widget-set text-center">
+                        <i class="fa-solid fa-users fa-5x"></i>
+                            <h3>{% if Customers %}
+                                Number of Customer: {{ Customers |length }}
+                            {% else %}
+                                No athletes.
+                            {% endif %} </h3>
+                           
+                        </div>
+                    </div>
+               <div class="col-md-3 col-sm-3 col-xs-6">
+                      <div class="alert alert-warning back-widget-set text-center">
+                      
+                            <i class="fa-solid fa-phone  fa-5x"></i>
+                            <h3>
+                           {% if reservations %}
+                                Number of Reservations : {{ reservations|length }}
+                            {% else %}
+                                No Authors.
+                            {% endif %} 
+                            
+                            
+                            </h3>
+                    
+                        </div>
+                    </div>
+               <div class="col-md-3 col-sm-3 col-xs-6">
+                      <div class="alert alert-danger back-widget-set text-center">
+                          
+                            <i class="fa-solid fa-bowl-food fa-5x"></i>
+                            <h3>    {% if meals %}
+                                Number of Meals : {{ meals|length }}
+                            {% else %}
+                                No Authors.
+                            {% endif %}  </h3>
+                           
+                        </div>
+                    </div>
+
+        </div>              
+
+                 
+         
+{% block body %}{% endblock body %}
+                   <!-- CONTENT-WRAPPER SECTION END-->
+    <section class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                   &copy; 2024  |<a href="" target="_blank"  ></a> 
+                </div>
+
+            </div>
+        </div>
+    </section>
+      <!-- FOOTER SECTION END-->
+    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+    <!-- CORE JQUERY  -->
+    <script src="{% static "js/jquery-1.10.2.js" %}"></script>
+    <!-- BOOTSTRAP SCRIPTS  -->
+    <script src="{% static "js/bootstrap.js" %}"></script>
+      <!-- CUSTOM SCRIPTS  -->
+    <script src="{% static "js/custom.js" %}"></script>
+  
+</body>
+</html>
